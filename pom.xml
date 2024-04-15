@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.test</groupId>
+    <artifactId>test</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>test-service</module>
+        <module>test-web</module>
+        <module>test-web-service</module>
+        <module>test-common</module>
+        <module>test-domain</module>
+        <module>test-dao</module>
+        <module>test-web-api</module>
+    </modules>
+
+    <properties>
+        <test.version>1.0</test.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.13.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 通用工具-->
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-common</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+            <!-- 业务核心-->
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-service</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+            <!-- 仓储 -->
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-dao</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+            <!-- 领域模型 -->
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-domain</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+            <!-- webservice服务 -->
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-web-service</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+            <!-- web-api -->
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-web-api</artifactId>
+                <version>${test.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
