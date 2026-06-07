@@ -12,6 +12,6 @@ public class ApplicationStart {
 
     public static void main(String[] args) {
         SpringApplication.run(ApplicationStart.class, args);
-        System.out.println("---------------------TEST启动成功1 ---------------------");
+        System.out.println("---------------------TEST启动成功 ---------------------");
     }
 }
